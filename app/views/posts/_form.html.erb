@@ -41,15 +41,17 @@
     <%= form.text_field :price, id: :post_price %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :post_user_id, :value => @current_user.id  %>
-  </div>
+
+    <%= form.hidden_field :user_id, id: :post_user_id, :value => @current_user.id  %>
+
 
   <%# user_id = @current_user%>
 <!-- User.find(session_id: request.session_options[:id])  -->
 <%# form.text_field :, :value => @make_id %>
-
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, id: :post_phone_number %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
