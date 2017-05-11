@@ -43,10 +43,13 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :post_user_id %>
+    <%= form.text_field :user_id, id: :post_user_id, :value => @current_user.id  %>
   </div>
 
-  <%= :user_id = User.find(session_id: request.session_options[:id]) %>
+  <%# user_id = @current_user%>
+<!-- User.find(session_id: request.session_options[:id])  -->
+<%# form.text_field :, :value => @make_id %>
+
 
   <div class="actions">
     <%= form.submit %>
