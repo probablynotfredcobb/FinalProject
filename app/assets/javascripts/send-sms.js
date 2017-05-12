@@ -4,8 +4,7 @@ function sendTextMessage() {
   var postPhoneNumber = $("#post_phone_number").val();
   var messageBody = $("#message").val();
 
-  var accountSid = 'AC1894bcf283cbedd6f0966fdef9114dd6';
-  var authToken = 'e7598fae26daedd3948c1a6de49ced1b';
+  // # account details 
 
   var client = require('twilio')(accountSid, authToken);
 
