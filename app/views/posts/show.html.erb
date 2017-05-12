@@ -44,7 +44,7 @@ Contact Seller: <br><br>
   <%= text_field_tag(:phone_number) %>
   <%= label_tag(:message, "Message:") %>
   <%= text_area_tag(:message) %><br>
-  <!-- <%= submit_tag("Contact") %> -->
+  <%= submit_tag("Contact", notice: "Thank you for your submission") %>
 <% end %>
 
-<button type="button" onclick="sendTextMessage()"> Send Message </button>
+<!-- <button type="button" onclick="sendTextMessage()"> Send Message </button> -->
