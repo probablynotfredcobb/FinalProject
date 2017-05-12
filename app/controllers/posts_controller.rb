@@ -113,6 +113,7 @@ class PostsController < ApplicationController
 
     def agent_number
       # The sales rep / agent's phone number
-      agent_number = ENV['AGENT_NUMBER']
+      set_post
+      agent_number =  @post.phone_number #ENV['AGENT_NUMBER']
     end
 end
