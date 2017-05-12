@@ -39,10 +39,12 @@
 <%= link_to 'Back', posts_path %><br><br><br>
 
 Contact Seller: <br><br>
-<%= form_tag(post_path, method: "get") do %>
+<%= form_tag(post_path, method: "post") do %>
   <%= label_tag(:phone_number, "Phone number:") %>
   <%= text_field_tag(:phone_number) %>
   <%= label_tag(:message, "Message:") %>
   <%= text_area_tag(:message) %><br>
-  <%= submit_tag("Contact") %>
+  <!-- <%= submit_tag("Contact") %> -->
 <% end %>
+
+<button type="button" onclick="sendTextMessage()"> Send Message </button>
