@@ -98,8 +98,9 @@ class PostsController < ApplicationController
     end
 
     def message
-      "New lead received for #{params[:house_title]}. " \
-      "Call #{params[:name]} at #{params[:phone]}. " \
+      # byebug
+      "Hey! Looks like someone is interested in  #{params[:hidden_title]}. " \
+      "You can contact them back at:  #{params[:phone_number]}. " \
       "Message: #{params[:message]}"
     end
 

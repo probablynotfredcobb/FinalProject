@@ -40,6 +40,7 @@
 
 Contact Seller: <br><br>
 <%= form_tag(post_path, method: "post") do %>
+<input type="hidden" name="hidden_title" value="<%= @post.title %>" />
   <%= label_tag(:phone_number, "Phone number:") %>
   <%= text_field_tag(:phone_number) %>
   <%= label_tag(:message, "Message:") %>
