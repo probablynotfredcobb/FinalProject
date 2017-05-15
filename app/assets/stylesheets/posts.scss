@@ -1,3 +1,31 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#items {
+  display: inline-block;
+  min-width: 31.1%;
+  max-width: 31.1%;
+  margin: 1em;
+  padding: 5em;
+  border: solid .1px;
+  margin-top: 5em;
+}
+
+.table {
+    display: table;
+}
+
+.row {
+    display: table-row;
+}
+
+.column {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#new-post {
+  float: right;
+  padding-bottom: .5em;
+}
