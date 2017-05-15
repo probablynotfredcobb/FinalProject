@@ -1,3 +1,5 @@
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -38,7 +40,10 @@
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %><br><br><br>
 
-Contact Seller: <br><br>
+
+
+
+Contact Seller of <strong><%= @post.title %></strong>: <br><br>
 <%= form_tag(post_path, method: "post") do %>
 <input type="hidden" name="hidden_title" value="<%= @post.title %>" />
   <%= label_tag(:phone_number, "Phone number:") %>
@@ -47,5 +52,11 @@ Contact Seller: <br><br>
   <%= text_area_tag(:message) %><br>
   <%= submit_tag("Contact") %>
 <% end %>
+
+
+
+
+
+
 
 <!-- <button type="button" onclick="sendTextMessage()"> Send Message </button> -->

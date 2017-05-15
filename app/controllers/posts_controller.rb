@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    render layout: true
   end
 
   # GET /posts/1
@@ -66,30 +67,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def self.twilio
-    new.twilio(message)
-    redirect_to root_url,
-      success: 'Thank you! The poster should be contacting you shortly.'
-  rescue Twilio::REST::RequestError => error
-    p error.message
-    redirect_to root_url,
-      error: 'Oops! There was an error. Please try again.'
-  end
-
   def twilio
-    @client.account.messages.create(
+    TwilioApi.send(
       from:  twilio_number,
       to:    agent_number,
       body:  message
     )
+    redirect_to posts_path, notice: 'Thanks for your message! The poster will be in contact with you shortly!'
   end
-
-  def initialize
-    account_sid = ENV['TWILIO_ACCOUNT_SID']
-    auth_token  = ENV['TWILIO_AUTH_TOKEN']
-    @client = Twilio::REST::Client.new(account_sid, auth_token)
-  end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -109,12 +94,6 @@ class PostsController < ApplicationController
       "Message: #{params[:message]}"
     end
 
-    def twilio_number
-      # A Twilio number you control - choose one from:
-      # https://www.twilio.com/user/account/phone-numbers/incoming
-      # Specify in E.164 format, e.g. "+16519998877"
-      twilio_number = ENV['TWILIO_NUMBER']
-    end
 
     def agent_number
       # The sales rep / agent's phone number
