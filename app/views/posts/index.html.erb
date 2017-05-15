@@ -9,8 +9,12 @@
       <div id="items">
         <div><strong>Created: </strong><%= time_ago_in_words(post.created_at) %></div><br>
         <div><strong>Title: </strong><%= post.title %></div><br>
-        <div><strong>Description: </strong><%= raw (post.description).truncate(100) %></div><br>
-        <div><strong>Image: </strong><%= post.image %>
+        <div><strong>Description: </strong><%= raw (post.description).truncate(50) %></div><br>
+        <% unless post.image.to_s.empty? %>
+        <div><strong>Image: </strong><div id='img-here'> {img}</div>
+        <% else %>
+          <div><strong>Image: </strong><div id="img-none"> N/A </div>
+        <% end %>
         </div><br>
         <div><strong>Location: </strong><%= post.location %></div><br>
         <div><strong>Tag: </strong><%= post.tag %></div><br>
@@ -19,6 +23,12 @@
         <div><strong></strong><%= link_to 'More details...', post %></div>
       </div>
       <% end %>
+      <div id="link">
+            <button type="button" class="btn btn-outline-info">
+              <%= link_to 'Previous Page', page: @page - 1 %></button> &nbsp;
+              <button type="button" class="btn btn-outline-info">
+                <%= link_to 'Next Page', page: @page + 1 %></button>
+              </div>
 </div>
 
 <br>

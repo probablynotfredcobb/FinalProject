@@ -5,8 +5,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(created_at: :desc)
-    render layout: true
+    @page = params[:page].to_i || 1
+    skip = (@page) * 9
+    @posts = Post.all.order(created_at: :desc).limit(9).offset(skip)
+    # @posts = Post.all.order(created_at: :desc)
+    # render layout: true
   end
 
   # GET /posts/1
