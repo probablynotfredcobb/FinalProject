@@ -37,6 +37,11 @@ class PostsController < ApplicationController
     end
   end
 
+
+  def post_params
+  params.require(:post).permit(:title, :content, :image)
+  end
+
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
@@ -94,7 +99,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :picture, :location, :tag, :price, :user_id, :phone_number)
+      params.require(:post).permit(:title, :description, :image, :location, :tag, :price, :user_id, :phone_number)
     end
 
     def message

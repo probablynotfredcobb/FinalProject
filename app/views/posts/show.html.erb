@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= @post.picture %>
+  <strong>Image:</strong><br>
+  <%= image_tag @post.image_url.to_s %>
 </p>
 
 <p>
@@ -45,7 +45,7 @@ Contact Seller: <br><br>
   <%= text_field_tag(:phone_number) %>
   <%= label_tag(:message, "Message:") %>
   <%= text_area_tag(:message) %><br>
-  <%= submit_tag("Contact", notice: "Thank you for your submission") %>
+  <%= submit_tag("Contact") %>
 <% end %>
 
 <!-- <button type="button" onclick="sendTextMessage()"> Send Message </button> -->
