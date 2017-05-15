@@ -9,7 +9,7 @@ gem 'carrierwave'
 gem 'twilio-ruby'
 gem 'dotenv-rails'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
-
+gem 'httparty'
 gem 'hirb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'

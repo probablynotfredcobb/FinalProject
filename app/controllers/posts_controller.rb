@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  after_action :latlng, only: [:create, :update]
 
   # GET /posts
   # GET /posts.json
@@ -80,6 +81,13 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def latlng
+      address = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{@post.location}&key=#{ENV.fetch('MAP_KEY')}").parsed_response
+      @post.lat = address["results"][0]["geometry"]["location"]["lat"]
+      @post.lng = address["results"][0]["geometry"]["location"]["lng"]
+      @post.save
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
