@@ -2,16 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// #items {
+//   display: inline-grid;
+//   min-width: 31.1%;
+//   max-width: 31.1%;
+//   margin: .6em;
+//   padding: 4em;
+//   border: solid .1px;
+//   margin-top: 5em;
+//   border-radius: 3%;
+//   padding-top: 4em;
+//   min-height: 31em;
+// }
+
+
+
 #items {
-  display: inline-block;
-  min-width: 31.1%;
-  max-width: 31.1%;
-  margin: .9em;
-  padding: 5em;
+  display: block;
   border: solid .1px;
-  margin-top: 5em;
-  border-radius: 3%;
-  padding-top: 4em;
+  padding: 2em;
 }
 
 div #center {
@@ -72,9 +81,19 @@ img {
 hr {
   border-color: #b7b6b6;
 }
-
+#deets {
+  align-self: center;
+}
 #deets a{
+  position: relative;
   color: purple;
+  border: .1px solid gray;
+  border-radius: 9%;
+  align-items: center;
+  padding: .5em;
+}
+#deets a:hover {
+  background-color: lightgray;
 }
 
 #notice {
@@ -84,5 +103,78 @@ hr {
 }
 
 /* =======================================
-NEW POST FORM
+PRLX
 ======================================= */
+
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  margin-bottom: 40px;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 450px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -8em;
+  margin-left: -5em;
+  margin-right: -3em;
+}
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  line-height: 62px;
+  font-weight: 200;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 3.4em;
+}
+section.module.parallax-1 {
+  background-image: url("https://images.pexels.com/photos/196356/pexels-photo-196356.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+  opacity: .7;
+}
+
+
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 10px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 43px;
+  }
+}

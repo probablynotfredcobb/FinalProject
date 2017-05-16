@@ -1,31 +1,41 @@
 <p id="notice"><%= notice %></p>
 
 <!-- <button><%= link_to 'New Post', new_post_path %></button> -->
-<h1>Recent Posts</h1><br>
-<div>
-    <% @posts.each do |post| %>
+<section class="module parallax parallax-1">
+  <div class="container">
+      <h1>The #1 Site For giving away your treasures</h1>
+    </div>
+  </section>
+
+<section class="module content">
+  <div class="container">
+
+    <h1>Recent Posts</h1><br>
+      <% @posts.each do |post| %>
       <div id="items">
-        <div id='center'> Posted <%= time_ago_in_words(post.created_at) %> ago</div><br>
+        <div> Posted <%= time_ago_in_words(post.created_at) %> ago</div><br>
         <div id='center'><strong> <%= post.title %></strong></div><hr>
         <div><strong>Description: </strong><%= raw (post.description).truncate(50) %></div><br>
         <% unless post.image.to_s.empty? %>
         <div><strong>Image: </strong><div id='img-here'> {img}</div>
         <% else %>
-          <div><strong>Image: </strong><div id="img-none"> N/A </div>
+        <div><strong>Image: </strong><div id="img-none"> N/A </div>
         <% end %>
-        </div><br>
-        <div><strong>Location: </strong><%= post.location %></div><br>
-        <div><strong>Tag: </strong><%= post.tag %></div><br>
-        <!-- <div><strong>Phone Number: </strong><%= post.phone_number %></div> -->
-        <div id="deets"><strong></strong><%= link_to 'More details...', post %></div>
+      </div><br>
+      <div><strong>Location: </strong><%= post.location %></div><br>
+      <div><strong>Tag: </strong><%= post.tag %></div><br>
+      <!-- <div><strong>Phone Number: </strong><%= post.phone_number %></div> -->
+      <div id="deets"><strong></strong><%= link_to 'More details...', post %></div>
+    </div>
+    <% end %><br><br><br>
+    <div id="link">
+      <button type="button" class="btn btn-outline-info">
+        <%= link_to 'Previous Page', page: @page - 1 %></button> &nbsp;
+        <button type="button" class="btn btn-outline-info">
+          <%= link_to 'Next Page', page: @page + 1 %></button>
+        </div>
       </div>
-      <% end %>
-      <div id="link">
-            <button type="button" class="btn btn-outline-info">
-              <%= link_to 'Previous Page', page: @page - 1 %></button> &nbsp;
-              <button type="button" class="btn btn-outline-info">
-                <%= link_to 'Next Page', page: @page + 1 %></button>
-              </div>
-</div>
+    </div>
+  </section>
 
 <br>
