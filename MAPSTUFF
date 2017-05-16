@@ -1,0 +1,107 @@
+
+<% def radians(deg)
+  deg * Math::PI / 180
+end
+
+def distancebetween(lat1,lon1,lat2,lon2)
+r = 3958.756;
+dlon = radians(lon2) - radians(lon1);
+lat2 =radians(lat2) ;
+lat1 = radians(lat1);
+dlat = lat2 - lat1
+a = (Math.sin(dlat/2))**2 + Math.cos(lat1) * Math.cos(lat2) * (Math.sin(dlon/2))**2
+c = 2 * Math.atan2( Math.sqrt(a), Math.sqrt(1-a) )
+d = r * c
+end
+%>
+
+<%= distancebetween(38.898556,-77.037852,38.897147,-77.043934) %>
+
+<h1>latitude + longitude</h1>
+
+  <dl>
+    <% @address.each do |key, value| %>
+      <dt><%= key %>
+      <dd><%= value %>
+    <% end %>
+  </dl>
+
+  <%= @address["results"][0]["geometry"]["location"]["lat"] %>
+  <%= @address["results"][0]["geometry"]["location"]["lng"] %>
+<!-- results > geometry > location > lat/lng  -->
+
+
+<!-- https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDD3yPtF1_jYL6RNxonaJCTurUOB2FGxQg -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 30%;
+        width: 20%;
+      }
+       /*Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 12
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              // lat: position.coords.latitude,
+              // lng: position.coords.longitude
+              lat: <%= @address["results"][0]["geometry"]["location"]["lat"] %> , //position.coords.latitude,
+              lng: <%= @address["results"][0]["geometry"]["location"]["lng"]%> //position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=ENV.fetch("MAP_KEY")&callback=initMap">
+    </script>
+  </body>
+</html>
