@@ -12,10 +12,10 @@
   <%= @post.description %>
 </p>
 
-<p>
-  <strong>Image:</strong><br>
+<p><div class='img-size'>
+  <br>
   <%= image_tag @post.image_url.to_s %>
-</p>
+</p></div>
 
 <p>
   <strong>Location:</strong>
@@ -51,6 +51,7 @@ Contact Seller of <strong><%= @post.title %></strong>: <br><br>
   <%= label_tag(:message, "Message:") %>
   <%= text_area_tag(:message) %><br>
   <%= submit_tag("Contact") %>
+
 <% end %>
 
 

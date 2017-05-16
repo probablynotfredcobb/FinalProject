@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Post', new_post_path %>
+<!-- <button><%= link_to 'New Post', new_post_path %></button> -->
 <h1>Recent Posts</h1><br>
-<div id="new-post">
-</div>
 <div>
     <% @posts.each do |post| %>
       <div id="items">
-        <div><strong>Created: </strong><%= time_ago_in_words(post.created_at) %></div><br>
-        <div><strong>Title: </strong><%= post.title %></div><br>
+        <div id='center'> Posted <%= time_ago_in_words(post.created_at) %> ago</div><br>
+        <div id='center'><strong> <%= post.title %></strong></div><hr>
         <div><strong>Description: </strong><%= raw (post.description).truncate(50) %></div><br>
         <% unless post.image.to_s.empty? %>
         <div><strong>Image: </strong><div id='img-here'> {img}</div>
@@ -18,9 +16,8 @@
         </div><br>
         <div><strong>Location: </strong><%= post.location %></div><br>
         <div><strong>Tag: </strong><%= post.tag %></div><br>
-        <div><strong>Price: </strong><%= post.price %></div><br>
         <!-- <div><strong>Phone Number: </strong><%= post.phone_number %></div> -->
-        <div><strong></strong><%= link_to 'More details...', post %></div>
+        <div id="deets"><strong></strong><%= link_to 'More details...', post %></div>
       </div>
       <% end %>
       <div id="link">

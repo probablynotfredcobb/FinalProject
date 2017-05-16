@@ -9,9 +9,48 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'send-sms' %>
+    <%= javascript_include_tag 'posts' %>
   </head>
 
   <body>
+    <div class="navbar navbar-inverse navbar-twitch" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				<span class="small-nav"> <span class="logo"> &lt;FFA&gt; </span> </span>
+				<span class="full-nav"> &lt; Bootsnipp &gt; </span>
+			</a>
+		</div>
+		<div class="">
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a href="/">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="" data-original-title="Home">
+							<span class="glyphicon glyphicon-home"></span>
+						</span>
+						<span class="full-nav"> Home </span>
+					</a>
+				</li>
+				<li>
+					<a href="#search">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="" data-original-title="About Us">
+							<span class="fa fa-location-arrow"></span>
+						</span>
+						<span class="full-nav"> Search By Location </span>
+					</a>
+				</li>
+				<li>
+					<a href="/posts/new">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="" data-original-title="Contact Us">
+							<span class="fa fa-plus-circle"></span>
+						</span>
+						<span class="full-nav"> New Post </span>
+					</a>
+				</li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
     <%= yield %>
   </body>
 </html>

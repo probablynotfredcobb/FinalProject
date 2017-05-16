@@ -6,10 +6,17 @@
   display: inline-block;
   min-width: 31.1%;
   max-width: 31.1%;
-  margin: 1em;
+  margin: .9em;
   padding: 5em;
   border: solid .1px;
   margin-top: 5em;
+  border-radius: 3%;
+  padding-top: 4em;
+}
+
+div #center {
+  text-align: center;
+  margin-top: -1em;
 }
 
 .table {
@@ -41,3 +48,41 @@
 #link {
   text-align: center;
 }
+
+.btn{
+  background-color: teal;
+  a {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+hr {
+  border-color: #b7b6b6;
+}
+
+#deets a{
+  color: purple;
+}
+
+#notice {
+  padding: 1em;
+  margin-bottom: 1.7em;
+  text-align: center;
+}
+
+/* =======================================
+NEW POST FORM
+======================================= */

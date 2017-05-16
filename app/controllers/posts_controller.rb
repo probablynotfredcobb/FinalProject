@@ -8,8 +8,6 @@ class PostsController < ApplicationController
     @page = params[:page].to_i || 1
     skip = (@page) * 9
     @posts = Post.all.order(created_at: :desc).limit(9).offset(skip)
-    # @posts = Post.all.order(created_at: :desc)
-    # render layout: true
   end
 
   # GET /posts/1
@@ -33,7 +31,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Alright! Your post was successfully created!' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
