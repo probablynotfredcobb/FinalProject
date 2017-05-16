@@ -22,7 +22,7 @@
         <div><strong>Image: </strong><div id="img-none"> N/A </div>
         <% end %>
       </div><br>
-      <div><strong>Location: </strong><%= post.location %></div><br>
+      <div><strong>Distance: </strong><%= post.distance_from(session[:lat], session[:lng]).round(1) %></div><br>
       <div><strong>Tag: </strong><%= post.tag %></div><br>
       <!-- <div><strong>Phone Number: </strong><%= post.phone_number %></div> -->
       <div id="deets"><strong></strong><%= link_to 'More details...', post %></div>
