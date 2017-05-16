@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def location
+    lat, lng = params[:lat], params[:lng]
+    session[:lat] = lat.to_f
+    session[:lng] = lng.to_f
+  end
+
+  def logout
+    reset_session
+    render json: session
+  end
+
   # GET /users
   # GET /users.json
   def index

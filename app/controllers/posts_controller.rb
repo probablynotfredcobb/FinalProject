@@ -8,6 +8,14 @@ class PostsController < ApplicationController
     @page = params[:page].to_i || 1
     skip = (@page) * 9
     @posts = Post.all.order(created_at: :desc).limit(9).offset(skip)
+
+    lat = session[:lat]
+    lng = session[:lng]
+    if lat and lng
+      @posts = @posts.sort_by do |post|
+        post.distance_from(lat, lng)
+      end
+    end
   end
 
   # GET /posts/1
@@ -40,10 +48,6 @@ class PostsController < ApplicationController
     end
   end
 
-
-  def post_params
-  params.require(:post).permit(:title, :content, :image)
-  end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
@@ -85,16 +89,16 @@ class PostsController < ApplicationController
     end
 
     def latlng
-      address = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{@post.location}&key=#{ENV.fetch('MAP_KEY')}").parsed_response
-      @post.lat = address["results"][0]["geometry"]["location"]["lat"]
-      @post.lng = address["results"][0]["geometry"]["location"]["lng"]
-      @post.save
+      @post.latlng
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :description, :image, :location, :tag, :price, :user_id, :phone_number)
     end
+    # def post_params
+    #   params.require(:post).permit(:title, :content, :image)
+    # end
 
     def message
       # byebug
@@ -102,7 +106,6 @@ class PostsController < ApplicationController
       "You can contact them back at:  #{params[:phone_number]}. " \
       "Message: #{params[:message]}"
     end
-
 
     def agent_number
       # The sales rep / agent's phone number
