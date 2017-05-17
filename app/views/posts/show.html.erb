@@ -1,49 +1,44 @@
 
 
 <p id="notice"><%= notice %></p>
-
+<button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button><br><br><br>
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+
+  <p>
+    <div class="post-image">
+    <!-- <strong>Image:</strong><br> -->
+    <%= image_tag @post.image_url.to_s %>
+  </div>
+  </p>
+  <!-- <strong>Title:</strong> -->
+  <div class="post-title"><strong><%= @post.title %></strong></div>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @post.description %>
+  <!-- <strong>Description:</strong> -->
+  <div class="post-description"><%= @post.description %></div>
 </p>
 
-<p>
-  <strong>Image:</strong><br>
-  <%= image_tag @post.image_url.to_s %>
-</p>
+
 
 <p>
-  <strong>Location:</strong>
+  <strong>Item Location:</strong>
   <%= @post.location %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Tag:</strong>
   <%= @post.tag %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @post.price %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @post.phone_number %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %><br><br><br>
+</p> -->
 
 
+<button type="button" class="btn btn-outline-primary"><%= link_to 'Edit Post', edit_post_path(@post) %> </button>
+<br><br><br>
 
+<hr>
 
-Contact Seller of <strong><%= @post.title %></strong>: <br><br>
+<div id="contact-poster">
+Contact the poster of <strong><%= @post.title %></strong>: <br><br>
 <%= form_tag(post_path, method: "post") do %>
 <input type="hidden" name="hidden_title" value="<%= @post.title %>" />
   <%= label_tag(:phone_number, "Phone number:") %>
@@ -52,6 +47,8 @@ Contact Seller of <strong><%= @post.title %></strong>: <br><br>
   <%= text_area_tag(:message) %><br>
   <%= submit_tag("Contact") %>
 <% end %>
+</div>
+
 
 
 
