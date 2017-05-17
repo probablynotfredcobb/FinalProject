@@ -22,6 +22,7 @@
   display: block;
   border: solid .1px;
   padding: 2em;
+  overflow: hidden;
 }
 
 div #center {
@@ -101,6 +102,20 @@ hr {
   padding: 1em;
   margin-bottom: 1.7em;
   text-align: center;
+}
+
+#img-section {
+  float: right;
+  margin-top: -7em;
+}
+
+#img-section img {
+  max-width: 300px;
+  max-height: 350px;
+}
+
+#section {
+  float: left;
 }
 
 /* =======================================

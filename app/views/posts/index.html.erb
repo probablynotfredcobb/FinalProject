@@ -16,13 +16,14 @@
       <div id="items">
         <div> Posted <%= time_ago_in_words(post.created_at) %> ago</div><br>
         <div id='center'><strong> <%= post.title %></strong></div><hr>
-        <div><strong>Description: </strong><%= raw (post.description).truncate(50) %></div><br>
+        <div id="section"><strong>Description: </strong><%= raw (post.description).truncate(50) %></div><br><br><br><br>
+        <div id="section"><strong>Distance: </strong><%= post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</div><br>
         <% unless post.image.to_s.empty? %>
-        <div><strong>Image: </strong><div id='img-here'> <%= image_tag post.image %> </div><br>
+        <div id="img-section"><strong>Image: </strong><div id='img-here'> <%= image_tag post.image %> </div><br>
         <% else %>
-        <div><strong>Image: </strong><div id="img-none"> N/A </div><br>
+        <div id="img-section"><strong>Image: </strong><div id="img-none"> N/A </div><br>
         <% end %>
-        <div><strong>Distance: </strong><%= post.distance_from(session[:lat], session[:lng]).round(1) %></div><br>
+
       </div><br>
 
       <!-- <div><strong>Phone Number: </strong><%= post.phone_number %></div> -->
