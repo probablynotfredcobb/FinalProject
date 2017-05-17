@@ -17,6 +17,7 @@
 
 
 
+
 #items {
   display: block;
   border: solid .1px;
@@ -59,7 +60,7 @@ div #center {
 }
 
 .btn{
-  background-color: teal;
+  background-color: rgb(159, 195, 195);
   a {
     color: white;
   }
@@ -148,13 +149,37 @@ section.module.parallax {
 section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.8);
   font-size: 10px;
-  line-height: 62px;
+  // line-height: 62px;
   font-weight: 200;
   text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-top: 3.4em;
 }
+section.module.parallax h4 {
+  color: white;
+  text-align: center;
+  // font-family: 'Monoton', cursive;
+  font-family: 'Rochester', cursive;
+  // font-family: 'Amaranth', sans-serif;
+  // font-family: 'Julius Sans One', sans-serif;
+  // font-family: 'Unica One', cursive;
+  // font-family: 'Alegreya Sans SC', sans-serif;
+  // font-family: 'Montserrat Alternates', sans-serif;
+  // font-family: 'Monoton', cursive;
+  // font-family: 'Sue Ellen Francisco', cursive;
+  // font-family: 'Six Caps', sans-serif;
+  // font-family: 'Dorsa', sans-serif;
+  font-size: 48px;
+  margin-top: -36px;
+}
+
+section.module.parallax h4 span {
+ color: rgba(241,231,103,1);
+ font-size: 69px;
+}
+
+
 section.module.parallax-1 {
   background-image: url("https://images.pexels.com/photos/196356/pexels-photo-196356.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
   opacity: .7;
@@ -175,6 +200,50 @@ section.module.parallax-1 {
 }
 @media all and (min-width: 960px) {
   section.module.parallax h1 {
-    font-size: 43px;
+    font-size: 91px;
+    // font-family: 'Dorsa', sans-serif;
+    // font-family: 'Monoton', cursive;
+    // font-family: 'Rochester', cursive;
+    // font-family: 'Amaranth', sans-serif;
+    // font-family: 'Julius Sans One', sans-serif;
+    // font-family: 'Unica One', cursive;
+    // font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+    // font-family: 'Monoton', cursive;
+    // font-family: 'Sue Ellen Francisco', cursive;
+    // font-family: 'Six Caps', sans-serif;
+    margin-top: 1.2em;
+  }
+  section.module.parallax h1 span#free {
+    // font-family: 'Monoton', cursive;
+    // font-family: 'Rochester', cursive;
+    // font-family: 'Amaranth', sans-serif;
+    // font-family: 'Julius Sans One', sans-serif;
+    // font-family: 'Unica One', cursive;
+    // font-family: 'Alegreya Sans SC', sans-serif;
+    // font-family: 'Montserrat Alternates', sans-serif;
+    // font-family: 'Monoton', cursive;
+    // font-family: 'Sue Ellen Francisco', cursive;
+    // font-family: 'Six Caps', sans-serif;
+    // font-family: 'Dorsa', sans-serif;
+    font-family: 'Vibur', cursive;
+    // font-family: 'Baloo Chettan', cursive;
+    font-size: 150px;
+    color: rgb(186, 236, 236);
+    text-transform: capitalize;
+    opacity: .9;
+  }
+  section.module.parallax h1 span#for {
+    letter-spacing: -9px;
+    margin-left: -.1em;
+    text-decoration: underline;
+  }
+  section.module.parallax h1 span#all {
+    font-size: 150px;
+    color: rgb(186, 236, 236);
+    text-transform: capitalize;
+    opacity: .9;
+    font-family: 'Vibur', cursive;
+    margin-left: -.25em;
   }
 }
