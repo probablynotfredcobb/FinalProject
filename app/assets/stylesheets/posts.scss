@@ -100,7 +100,7 @@ img {
 
 hr {
   border-color: #b7b6b6;
-  margin-top: 6em;
+  margin-top: -3em;
 }
 #deets {
   align-self: center;
@@ -279,7 +279,9 @@ section.module.parallax-1 {
 /* ==========================================
 SHOW PAGE
 ========================================== */
-
+.bck-btn{
+  margin-top: -3em;
+}
 .btn a:hover{
   background-color: transparent;
   color: gray;
@@ -303,4 +305,9 @@ SHOW PAGE
 
 #contact-poster{
   width: 100%;
+}
+
+#edit {
+  margin-top: 8em;
+  margin-left: 41em;
 }

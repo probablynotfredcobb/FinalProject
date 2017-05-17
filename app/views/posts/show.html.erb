@@ -1,7 +1,7 @@
 
 
 <p id="notice"><%= notice %></p>
-<button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button><br><br><br>
+<div class="bck-btn"><button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button></div><br><br><br>
 <p>
 
   <p>
@@ -23,10 +23,7 @@
 
 <p>
 
-  <strong>Item Location:</strong>
-  <%= @post.location %>
-
-  <strong>Distance:</strong>
+  <strong>Item Location:</strong><br><br>
   <%= @post.distance_from(session[:lat], session[:lng]).round(1) %>
 
 </p>
@@ -37,7 +34,7 @@
 </p> -->
 
 
-<button type="button" class="btn btn-outline-primary"><%= link_to 'Edit Post', edit_post_path(@post) %> </button>
+<div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div>
 <br><br><br>
 
 <hr>
