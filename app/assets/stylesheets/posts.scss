@@ -94,13 +94,13 @@ h1 {
 }
 
 img {
-  width: 300px;
+  width: 350px;
   height: 350px;
 }
 
 hr {
   border-color: #b7b6b6;
-  margin-top: -3em;
+
 }
 #deets {
   align-self: center;
@@ -289,25 +289,43 @@ SHOW PAGE
 
 .post-title {
   text-transform: capitalize;
-
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 25px;
 }
 
 .post-description {
   width: 50%;
   height: 45%;
   padding-bottom: 6em;
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 17px;
 }
 
 .post-image {
-  float: right;
   margin-top: -4em;
+}
+
+.post-location {
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 15px;
 }
 
 #contact-poster{
   width: 100%;
+  display: inline-flex;
+  margin-left: 35em;
+}
+
+#contact-poster p {
+  font-size: 15px;
 }
 
 #edit {
   margin-top: 8em;
   margin-left: 41em;
+}
+
+form {
+  margin-left: -17em;
+  margin-top: 2em;
 }

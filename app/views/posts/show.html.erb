@@ -4,27 +4,27 @@
 <div class="bck-btn"><button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button></div><br><br><br>
 <p>
 
-  <p>
-    <div class="post-image">
-    <!-- <strong>Image:</strong><br> -->
-    <%= image_tag @post.image_url.to_s %>
-  </div>
+
   </p>
   <!-- <strong>Title:</strong> -->
   <div class="post-title"><strong><%= @post.title %></strong></div>
-</p>
+</p><br>
 
 <p>
   <!-- <strong>Description:</strong> -->
   <div class="post-description"><%= @post.description %></div>
 </p>
 
-
+<p>
+  <div class="post-image">
+  <!-- <strong>Image:</strong><br> -->
+  <%= image_tag @post.image_url.to_s %>
+</div>
 
 <p>
 
-  <strong>Item Location:</strong><br><br>
-  <%= @post.distance_from(session[:lat], session[:lng]).round(1) %>
+  <div class="post-location"><strong>Item Location:</strong><br><br>
+  <%= @post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</div>
 
 </p>
 
@@ -34,15 +34,15 @@
 </p> -->
 
 
-<div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div>
+<!-- <div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div> -->
 <br><br><br>
 
 <hr>
 
 <div id="contact-poster">
-Contact the poster of <strong><%= @post.title %></strong>: <br><br>
+<p>Contact the poster of: &nbsp;<strong><%= @post.title %></strong></p><br><br>
 <%= form_tag(post_path, method: "post") do %>
-<input type="hidden" name="hidden_title" value="<%= @post.title %>" />
+<input type="hidden" name="hidden_title" value="<%= @post.title %>" /><br>
   <%= label_tag(:phone_number, "Phone number:") %>
   <%= text_field_tag(:phone_number) %>
   <%= label_tag(:message, "Message:") %>
