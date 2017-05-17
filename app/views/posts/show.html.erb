@@ -22,8 +22,13 @@
 
 
 <p>
+
   <strong>Item Location:</strong>
   <%= @post.location %>
+
+  <strong>Distance:</strong>
+  <%= @post.distance_from(session[:lat], session[:lng]).round(1) %>
+
 </p>
 
 <!-- <p>
