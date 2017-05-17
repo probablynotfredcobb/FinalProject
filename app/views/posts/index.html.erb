@@ -14,17 +14,17 @@
     <h1>Recent Posts</h1><br>
       <% @posts.each do |post| %>
       <div id="items">
-        <div> Posted <%= time_ago_in_words(post.created_at) %> ago</div><br>
+        <div> Posted <span id="time"><%= time_ago_in_words(post.created_at) %> ago</span></div><br>
         <div id='center'><strong> <%= post.title %></strong></div><hr>
-        <div id="section"><strong>Description: </strong><%= raw (post.description).truncate(50) %></div><br><br><br><br>
-        <div id="section"><strong>Distance: </strong><%= post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</div><br>
+        <div id="section"><strong>Description: </strong><br><%= raw (post.description).truncate(50) %></div><br><br><br><br>
+        <div id="section"><strong>Distance: </strong><br><span id="miles"><%= post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</span></div><br>
         <% unless post.image.to_s.empty? %>
         <div id="img-section"><strong>Image: </strong><div id='img-here'> <%= image_tag post.image %> </div><br>
         <% else %>
-        <div id="img-section"><strong>Image: </strong><div id="img-none"> N/A </div><br>
+        <div id="img-section"><strong>Image: </strong><div id="img-none"> <strong>N/A </strong></div><br>
         <% end %>
 
-      </div><br>
+      </div><br><br><br><br>
 
       <!-- <div><strong>Phone Number: </strong><%= post.phone_number %></div> -->
       <div id="deets"><strong></strong><%= link_to 'More details...', post %></div>

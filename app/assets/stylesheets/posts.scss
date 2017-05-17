@@ -23,6 +23,15 @@
   border: solid .1px;
   padding: 2em;
   overflow: hidden;
+  color: #676565;
+}
+
+span#time {
+  color: #CF5300;
+}
+
+span#miles {
+  color: forestgreen;
 }
 
 div #center {
@@ -73,6 +82,15 @@ div #center {
 h1 {
   width: 100%;
   text-align: center;
+  // font-family: 'Amaranth', sans-serif;
+  font-family: 'Julius Sans One', sans-serif;
+  // font-family: 'Unica One', cursive;
+  // font-family: 'Alegreya Sans SC', sans-serif;
+  // font-family: 'Montserrat Alternates', sans-serif;
+  // font-family: 'Monoton', cursive;
+  // font-family: 'Sue Ellen Francisco', cursive;
+  // font-family: 'Six Caps', sans-serif;
+  // font-family: 'Dorsa', sans-serif;
 }
 
 img {
@@ -88,8 +106,9 @@ hr {
 }
 #deets a{
   position: relative;
-  color: purple;
-  border: .1px solid gray;
+  color: gray;
+  // border: .1px solid beige;
+  background: #edf0f5;
   border-radius: 9%;
   align-items: center;
   padding: .5em;
@@ -176,15 +195,7 @@ section.module.parallax h4 {
   text-align: center;
   // font-family: 'Monoton', cursive;
   font-family: 'Rochester', cursive;
-  // font-family: 'Amaranth', sans-serif;
-  // font-family: 'Julius Sans One', sans-serif;
-  // font-family: 'Unica One', cursive;
-  // font-family: 'Alegreya Sans SC', sans-serif;
-  // font-family: 'Montserrat Alternates', sans-serif;
-  // font-family: 'Monoton', cursive;
-  // font-family: 'Sue Ellen Francisco', cursive;
-  // font-family: 'Six Caps', sans-serif;
-  // font-family: 'Dorsa', sans-serif;
+
   font-size: 48px;
   margin-top: -36px;
 }
