@@ -4,8 +4,9 @@ if (navigator.geolocation) {
       var coords = position.coords;
       var lat = coords.latitude;
       var lng = coords.longitude;
-      console.log(lat, lng);
       $.post('/location', {lat: lat, lng: lng});
+      console.log(lat, lng);
+      
     },
     function() {
       // handleLocationError(true, infoWindow, map.getCenter());
