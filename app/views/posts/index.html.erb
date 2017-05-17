@@ -3,7 +3,8 @@
 <!-- <button><%= link_to 'New Post', new_post_path %></button> -->
 <section class="module parallax parallax-1">
   <div class="container">
-      <h1>The #1 Site For giving away your treasures</h1>
+      <h1><strong><span id="free">free</span></strong> <span id="for">for</span><strong><span id="all"> all</span></strong></h1>
+      <h4>A place to post and explore <span>treasures</span> </h4>
     </div>
   </section>
 
@@ -13,17 +14,18 @@
     <h1>Recent Posts</h1><br>
       <% @posts.each do |post| %>
       <div id="items">
-        <div> Posted <%= time_ago_in_words(post.created_at) %> ago</div><br>
+        <div> Posted <span id="time"><%= time_ago_in_words(post.created_at) %> ago</span></div><br>
         <div id='center'><strong> <%= post.title %></strong></div><hr>
-        <div><strong>Description: </strong><%= raw (post.description).truncate(50) %></div><br>
+        <div id="section"><strong>Description: </strong><br><%= raw (post.description).truncate(50) %></div><br><br><br><br>
+        <div id="section"><strong>Distance: </strong><br><span id="miles"><%= post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</span></div><br>
         <% unless post.image.to_s.empty? %>
-        <div><strong>Image: </strong><div id='img-here'> {img}</div>
+        <div id="img-section"><strong>Image: </strong><div id='img-here'> <%= image_tag post.image %> </div><br>
         <% else %>
-        <div><strong>Image: </strong><div id="img-none"> N/A </div>
+        <div id="img-section"><strong>Image: </strong><div id="img-none"> <strong>N/A </strong></div><br>
         <% end %>
-      </div><br>
-      <div><strong>Distance: </strong><%= post.distance_from(session[:lat], session[:lng]).round(1) %></div><br>
-      <div><strong>Tag: </strong><%= post.tag %></div><br>
+
+      </div><br><br><br><br>
+
       <!-- <div><strong>Phone Number: </strong><%= post.phone_number %></div> -->
       <div id="deets"><strong></strong><%= link_to 'More details...', post %></div>
     </div>
