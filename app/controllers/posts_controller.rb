@@ -5,9 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @page = params[:page].to_i || 1
-    skip = (@page) * 9
-    @posts = Post.all.order(created_at: :desc).limit(9).offset(skip)
+    sort_time
 
     lat = session[:lat]
     lng = session[:lng]
@@ -16,6 +14,9 @@ class PostsController < ApplicationController
         post.distance_from(lat, lng)
       end
     end
+  end
+
+  def thanks
   end
 
   # GET /posts/1
@@ -75,11 +76,11 @@ class PostsController < ApplicationController
 
   def twilio
     TwilioApi.send(
-      from:  twilio_number,
+      from:  ENV.fetch('TWILIO_NUMBER'),
       to:    agent_number,
       body:  message
     )
-    redirect_to posts_path, notice: 'Thanks for your message! The poster will be in contact with you shortly!'
+    redirect_to '/thanks'
   end
 
   private
@@ -111,5 +112,15 @@ class PostsController < ApplicationController
       # The sales rep / agent's phone number
       set_post
       agent_number =  @post.phone_number #ENV['AGENT_NUMBER']
+
+    end
+
+    def sort_time
+      @page = params[:page].to_i || 1
+      skip = (@page) * 9
+      @posts = Post.all.order(created_at: :desc).limit(9).offset(skip)
+    end
+
+    def self.sort_distance
     end
 end

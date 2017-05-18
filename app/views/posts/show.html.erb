@@ -32,7 +32,8 @@
   <strong>Tag:</strong>
   <%= @post.tag %>
 </p> -->
-
+</div>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <!-- <div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div> -->
 <br><br><br>
