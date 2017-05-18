@@ -358,3 +358,45 @@ THANKS
   margin-left: 46em;
   margin-top: 2em;
 }
+
+/* ===================================
+NEW
+=================================== */
+
+div.field{
+  margin-left: 18em;
+  margin-top: 3em;
+}
+
+div.actions {
+  margin-left: 63em;
+  margin-top: 3em;
+}
+
+button.form-back {
+  margin-top: 3em;
+}
+
+.field p {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 15px;
+}
+
+.field {
+  text-align: center;
+}
+
+input[type=file]{
+  margin-left: 41.2em;
+}
+
+input[type=button], input[type=reset], input[type=submit]{
+  background-color: #7ac4dc;
+  color: white;
+  border: none;
+  font-size: 14px;
+  border-radius: 24px;
+  padding: 0.5em;
+}
