@@ -24,6 +24,8 @@
   padding: 2em;
   overflow: hidden;
   color: #676565;
+  margin-top: 1em;
+  box-shadow: 7px 5px 3px #ccc;
 }
 
 span#time {
@@ -37,6 +39,7 @@ span#miles {
 div #center {
   text-align: center;
   margin-top: -1em;
+  text-transform: uppercase;
 }
 
 .table {
@@ -129,7 +132,7 @@ hr {
 }
 
 #img-section img {
-  max-width: 300px;
+  max-width: 325px;
   max-height: 350px;
 }
 
@@ -171,7 +174,7 @@ section.module.content {
   padding: 40px 0;
 }
 section.module.parallax {
-  height: 450px;
+  height: 483px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
