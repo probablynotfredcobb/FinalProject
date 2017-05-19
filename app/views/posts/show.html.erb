@@ -40,6 +40,12 @@
 
 <hr>
 
+
+
+
+
+
+
 <div id="contact-poster">
 <p>Contact the poster of: &nbsp;<strong><%= @post.title %></strong></p><br><br>
 <%= form_tag(post_path, method: "post") do %>
@@ -49,6 +55,7 @@
   <%= label_tag(:message, "Message:") %>
   <%= text_area_tag(:message) %><br>
   <%= submit_tag("Contact") %>
+
 <% end %>
 </div>
 
