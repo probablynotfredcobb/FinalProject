@@ -14,23 +14,22 @@
   <div class="field">
     <p><%= form.label :title %></p>
     <%= form.text_field :title, id: :post_title, :size => 50 %>
-  </div>
+  </div><br><br>
 
   <div class="field">
     <p><strong><%= form.label :description %></strong></p>
     <%= form.text_area :description, id: :post_description, cols: 50, rows: 10 %>
-  </div>
+  </div><br><br>
 
   <div class="field">
     <p><strong>add an image....</strong></p>
     <%= form.file_field :image %>
-  </div>
+  </div><br><br>
 
   <div class="field">
     <p><%= form.label :location %>: Address of where your item is located</p>
     <%= form.text_field :location, id: :post_location, :size => 50 %>
-  </div>
-
+  </div><br><br>
   <!-- <div class="field">
     <p><%= form.label :tag %></p>
     <%= form.text_field :tag, id: :post_tag, :size => 50 %>
@@ -51,7 +50,7 @@
   <div class="field">
     <p><%= form.label :phone_number %></p>
     <%= form.text_field :phone_number, id: :post_phone_number, :size => 50%>
-  </div>
+  </div><br>
 
   <div class="actions">
     <%= form.submit %>
