@@ -1,0 +1,104 @@
+remote: Compressing source files... done.        
+remote: Building source:        
+remote: 
+remote: -----> Ruby app detected        
+remote: -----> Compiling Ruby/Rails        
+remote: -----> Using Ruby version: ruby-2.3.4        
+remote: -----> Installing dependencies using bundler 1.13.7        
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment        
+remote:        Warning: the running version of Bundler (1.13.7) is older than the version that created the lockfile (1.14.6). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.        
+remote:        Fetching gem metadata from https://rubygems.org/...........        
+remote:        Fetching version metadata from https://rubygems.org/..        
+remote:        Fetching dependency metadata from https://rubygems.org/.        
+remote:        Using rake 12.0.0        
+remote:        Using concurrent-ruby 1.0.5        
+remote:        Using i18n 0.8.1        
+remote:        Using minitest 5.10.2        
+remote:        Using thread_safe 0.3.6        
+remote:        Using builder 3.2.3        
+remote:        Using erubi 1.6.0        
+remote:        Using mini_portile2 2.1.0        
+remote:        Using rack 2.0.3        
+remote:        Using nio4r 2.0.0        
+remote:        Using websocket-extensions 0.1.2        
+remote:        Using mime-types-data 3.2016.0521        
+remote:        Using arel 8.0.0        
+remote:        Using coffee-script-source 1.12.2        
+remote:        Using execjs 2.7.0        
+remote:        Using method_source 0.8.2        
+remote:        Using thor 0.19.4        
+remote:        Using hirb 0.7.3        
+remote:        Using multi_xml 0.6.0        
+remote:        Using multi_json 1.12.1        
+remote:        Using jwt 1.5.6        
+remote:        Using pg 0.20.0        
+remote:        Using puma 3.8.2        
+remote:        Using bundler 1.13.7        
+remote:        Using sass 3.4.24        
+remote:        Using tilt 2.0.7        
+remote:        Using turbolinks-source 5.0.3        
+remote:        Using tzinfo 1.2.3        
+remote:        Using websocket-driver 0.6.5        
+remote:        Using mime-types 3.1        
+remote:        Using coffee-script 2.4.1        
+remote:        Using uglifier 3.2.0        
+remote:        Using rack-test 0.6.3        
+remote:        Using sprockets 3.7.1        
+remote:        Using httparty 0.15.1        
+remote:        Using twilio-ruby 4.13.0        
+remote:        Using turbolinks 5.0.1        
+remote:        Using activesupport 5.1.1        
+remote:        Using nokogiri 1.7.2        
+remote:        Using mail 2.6.5        
+remote:        Using globalid 0.4.0        
+remote:        Using activemodel 5.1.1        
+remote:        Using jbuilder 2.6.4        
+remote:        Using rails-dom-testing 2.0.3        
+remote:        Using loofah 2.0.3        
+remote:        Using activejob 5.1.1        
+remote:        Using activerecord 5.1.1        
+remote:        Using carrierwave 1.1.0        
+remote:        Using rails-html-sanitizer 1.0.3        
+remote:        Using actionview 5.1.1        
+remote:        Using actionpack 5.1.1        
+remote:        Using actioncable 5.1.1        
+remote:        Using actionmailer 5.1.1        
+remote:        Using railties 5.1.1        
+remote:        Using sprockets-rails 3.2.0        
+remote:        Using coffee-rails 4.2.1        
+remote:        Using jquery-rails 4.3.1        
+remote:        Using rails 5.1.1        
+remote:        Using sass-rails 5.0.6        
+remote:        Bundle complete! 22 Gemfile dependencies, 59 gems now installed.        
+remote:        Gems in the groups development and test were not installed.        
+remote:        Bundled gems are installed into ./vendor/bundle.        
+remote:        Bundle completed (2.87s)        
+remote:        Cleaning up the bundler cache.        
+remote:        Warning: the running version of Bundler (1.13.7) is older than the version that created the lockfile (1.14.6). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.        
+remote: -----> Installing node-v6.10.0-linux-x64        
+remote:        Detected manifest file, assuming assets were compiled locally        
+remote: 
+remote: ###### WARNING:        
+remote:        You have not declared a Ruby version in your Gemfile.        
+remote:        To set your Ruby version add this line to your Gemfile:        
+remote:        ruby '2.3.4'        
+remote:        # See https://devcenter.heroku.com/articles/ruby-versions for more information.        
+remote: 
+remote: ###### WARNING:        
+remote:        No Procfile detected, using the default web server.        
+remote:        We recommend explicitly declaring how to boot your server process via a Procfile.        
+remote:        https://devcenter.heroku.com/articles/ruby-default-web-server        
+remote: 
+remote: -----> Discovering process types        
+remote:        Procfile declares types     -> (none)        
+remote:        Default types for buildpack -> console, rake, web, worker        
+remote: 
+remote: -----> Compressing...        
+remote:        Done: 39.9M        
+remote: -----> Launching...        
+remote:        Released v11        
+remote:        https://safe-refuge-47283.herokuapp.com/ deployed to Heroku        
+remote: 
+remote: Verifying deploy... done.        
+To https://git.heroku.com/safe-refuge-47283.git
+   dfc9365..7df0ac5  master -> master

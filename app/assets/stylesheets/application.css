@@ -79,7 +79,7 @@
  	display: block;
  }
  .navbar-twitch.open > .container .small-nav {
- 	display: none;
+ 	display: block;
  }
  .navbar-twitch .navbar-collapse {
  	padding: 0px;
