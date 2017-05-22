@@ -125,6 +125,7 @@ hr {
   background-color: lightgray;
 }
 
+
 #notice {
   margin-bottom: 1.7em;
   text-align: center;
@@ -320,13 +321,15 @@ SHOW PAGE
 }
 
 .post-title {
-  text-transform: capitalize;
+  font-size: 35px;
+  text-align: center;
+  margin-top: -1em;
+  text-transform: uppercase;
   font-family: 'Mukta Vaani', sans-serif;
-  font-size: 25px;
 }
 
 .post-description {
-  width: 50%;
+  text-align: justify;
   height: 45%;
   padding-bottom: 6em;
   font-family: 'Mukta Vaani', sans-serif;
@@ -334,7 +337,13 @@ SHOW PAGE
 }
 
 .post-image {
-  margin-top: -4em;
+  margin-left: 10em;
+}
+
+.map-stuff {
+  margin-top: -33em;
+  margin-right: 10em;
+  text-align: right;
 }
 
 .post-location {

@@ -1,19 +1,13 @@
 
 
 <p id="notice"><%= notice %></p>
-<div class="bck-btn"><button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button></div><br><br><br>
-<p>
+<div class="bck-btn"><button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button></div><br><br><br><br>
 
-
-  </p>
   <!-- <strong>Title:</strong> -->
   <div class="post-title"><strong><%= @post.title %></strong></div>
 </p><br>
 
-<p>
-  <!-- <strong>Description:</strong> -->
-  <div class="post-description"><%= @post.description %></div>
-</p>
+
 
 <p>
   <div class="post-image">
@@ -22,19 +16,33 @@
 </div>
 </p>
 
-<p>
+</p>
 
-  <div class="post-location"><strong>Item Location:</strong><br><br>
+<div class="map-stuff">
+<!-- start map -->
+<% the_source ="https://maps.googleapis.com/maps/api/staticmap?
+center=#{@post.location}&zoom=14&size=550x425
+&markers=icon:https://goo.gl/1oTJ9Y%7C#{@post.location}
+&key=AIzaSyDjlbo60sptFY4BnIpEVTlWFU3TCq-nNII" %>
+<%= image_tag the_source %>
+
+<!-- end map -->
+<p>
+  <div class="post-location"><strong>Item Location:</strong>
   <%= @post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</div>
 
 </p>
 
-<!-- <p>
-  <strong>Tag:</strong>
-  <%= @post.tag %>
-</p> -->
-
 <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Fposts%2F:id&layout=button&size=small&mobile_iframe=true&appId=312251409194916&width=59&height=20" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+</div>
+
+
+<p>
+  <!-- <strong>Description:</strong> -->
+  <div class="post-description"><%= @post.description %></div>
+</p>
+
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <!-- <div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div> -->
