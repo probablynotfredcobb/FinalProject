@@ -21,7 +21,14 @@
   <strong>Distance:</strong>
   <%= @post.distance_from(session[:lat], session[:lng]).round(1) %>
 </p>
+<!-- start map -->
+<% the_source ="https://maps.googleapis.com/maps/api/staticmap?
+center=#{@post.location}&zoom=14&size=400x400
+&markers=icon:https://goo.gl/1oTJ9Y%7C#{@post.location}
+&key=AIzaSyDjlbo60sptFY4BnIpEVTlWFU3TCq-nNII" %>
+<%= image_tag the_source %>
 
+<!-- end map -->
 <p>
   <strong>Tag:</strong>
   <%= @post.tag %>
