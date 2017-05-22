@@ -12,29 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
-  </div>
+    <p><%= form.label :title %></p>
+    <%= form.text_field :title, id: :post_title, :size => 50 %>
+  </div><br><br>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :post_description %>
-  </div>
+    <p><strong><%= form.label :description %></strong></p>
+    <%= form.text_area :description, id: :post_description, cols: 50, rows: 10 %>
+  </div><br><br>
 
   <div class="field">
-    add an image....
+    <p><strong>add an image....</strong></p>
     <%= form.file_field :image %>
-  </div>
+  </div><br><br>
 
   <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location, id: :post_location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tag %>
-    <%= form.text_field :tag, id: :post_tag %>
-  </div>
+    <p><%= form.label :location %>: Address of where your item is located</p>
+    <%= form.text_field :location, id: :post_location, :size => 50 %>
+  </div><br><br>
+  <!-- <div class="field">
+    <p><%= form.label :tag %></p>
+    <%= form.text_field :tag, id: :post_tag, :size => 50 %>
+  </div> -->
 
   <!-- <div class="field">
     <%= form.label :price %>
@@ -49,11 +48,11 @@
 <!-- User.find(session_id: request.session_options[:id])  -->
 <%# form.text_field :, :value => @make_id %>
   <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number, id: :post_phone_number %>
-  </div>
+    <p><%= form.label :phone_number %></p>
+    <%= form.text_field :phone_number, id: :post_phone_number, :size => 50%>
+  </div><br>
 
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+  <% end %>

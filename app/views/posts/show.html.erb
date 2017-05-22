@@ -1,25 +1,31 @@
 
 
 <p id="notice"><%= notice %></p>
+<div class="bck-btn"><button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button></div><br><br><br>
+<p>
+
+
+  </p>
+  <!-- <strong>Title:</strong> -->
+  <div class="post-title"><strong><%= @post.title %></strong></div>
+</p><br>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <!-- <strong>Description:</strong> -->
+  <div class="post-description"><%= @post.description %></div>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<p>
-  <strong>Image:</strong><br>
+  <div class="post-image">
+  <!-- <strong>Image:</strong><br> -->
   <%= image_tag @post.image_url.to_s %>
-</p>
+</div>
 
 <p>
-  <strong>Distance:</strong>
-  <%= @post.distance_from(session[:lat], session[:lng]).round(1) %>
+
+  <div class="post-location"><strong>Item Location:</strong><br><br>
+  <%= @post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</div>
+
 </p>
 <!-- start map -->
 <% the_source ="https://maps.googleapis.com/maps/api/staticmap?
@@ -30,35 +36,38 @@ center=#{@post.location}&zoom=14&size=400x400
 
 <!-- end map -->
 <p>
+
+<!-- <p>
   <strong>Tag:</strong>
   <%= @post.tag %>
-</p>
+</p> -->
+</div>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @post.price %>
-</p>
+<!-- <div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div> -->
+<br><br><br>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @post.phone_number %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %><br><br><br>
+<hr>
 
 
 
 
-Contact Seller of <strong><%= @post.title %></strong>: <br><br>
+
+
+
+<div id="contact-poster">
+<p>Contact the poster of: &nbsp;<strong><%= @post.title %></strong></p><br><br>
 <%= form_tag(post_path, method: "post") do %>
-<input type="hidden" name="hidden_title" value="<%= @post.title %>" />
+<input type="hidden" name="hidden_title" value="<%= @post.title %>" /><br>
   <%= label_tag(:phone_number, "Phone number:") %>
   <%= text_field_tag(:phone_number) %>
   <%= label_tag(:message, "Message:") %>
   <%= text_area_tag(:message) %><br>
   <%= submit_tag("Contact") %>
+
 <% end %>
+</div>
+
 
 
 
