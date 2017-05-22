@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170515193213) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170515193213) do
     t.string "location"
     t.string "tag"
     t.string "price"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone_number"
@@ -36,4 +39,5 @@ ActiveRecord::Schema.define(version: 20170515193213) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "posts", "users"
 end
