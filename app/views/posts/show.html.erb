@@ -20,6 +20,7 @@
   <!-- <strong>Image:</strong><br> -->
   <%= image_tag @post.image_url.to_s %>
 </div>
+</p>
 
 <p>
 
@@ -32,7 +33,8 @@
   <strong>Tag:</strong>
   <%= @post.tag %>
 </p> -->
-</div>
+
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Fposts%2F:id&layout=button&size=small&mobile_iframe=true&appId=312251409194916&width=59&height=20" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <!-- <div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div> -->

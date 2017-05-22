@@ -144,6 +144,11 @@ hr {
   float: left;
 }
 
+.tooltip .tooltiptext {
+    top: -5px;
+    left: 105%;
+}
+
 /* =======================================
 PRLX
 ======================================= */
@@ -219,17 +224,22 @@ section.module.parallax-1 {
 }
 
 section.new-module.parallax-1 {
-  background-image: url("https://images.pexels.com/photos/6372/coffee-smartphone-desk-pen.jpg?w=1260&h=750&auto=compress&cs=tinysrgb");
-  width: 125%;
-  margin-left: -4em;
-  height: 300px;
+  background-image: url("https://images.pexels.com/photos/221004/pexels-photo-221004.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
   opacity: .7;
-  margin-top: -4em;
+  height: 375px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -8em;
+  margin-left: -5em;
+  margin-right: -3em;
+
 }
 section.new-module.parallax-1 h1{
   width: 100%;
-  margin-left: -2em;
-  margin-top: 2.2em;
+  // margin-left: -2em;
+  // margin-top: 2.2em;
   font-size: 57px;
   color: #000000
 }
