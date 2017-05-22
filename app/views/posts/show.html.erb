@@ -24,7 +24,7 @@
 center=#{@post.location}&zoom=14&size=550x425
 &markers=icon:https://goo.gl/1oTJ9Y%7C#{@post.location}
 &key=AIzaSyDjlbo60sptFY4BnIpEVTlWFU3TCq-nNII" %>
-<%= image_tag the_source %>
+<%= image_tag the_source, :class => "mape"%>
 
 <!-- end map -->
 <p>
@@ -60,11 +60,11 @@ center=#{@post.location}&zoom=14&size=550x425
 <p>Contact the poster of: &nbsp;<strong><%= @post.title %></strong></p><br><br>
 <%= form_tag(post_path, method: "post") do %>
 <input type="hidden" name="hidden_title" value="<%= @post.title %>" /><br>
-  <%= label_tag(:phone_number, "Phone number:") %>
-  <%= text_field_tag(:phone_number) %>
-  <%= label_tag(:message, "Message:") %>
-  <%= text_area_tag(:message) %><br>
-  <%= submit_tag("Contact") %>
+  <div class="show-field"><%= label_tag(:phone_number, "Phone number:") %>
+  <%= text_field_tag (:phone_number) %></div>
+  <div class="show-field"><%= label_tag(:message, "Message:") %>
+  <%= text_area_tag(:message) %><br></div>
+  <div class="show-submit"><%= submit_tag("Contact") %> </div>
 
 <% end %>
 </div>

@@ -241,8 +241,11 @@ section.new-module.parallax-1 h1{
   width: 100%;
   // margin-left: -2em;
   // margin-top: 2.2em;
-  font-size: 57px;
-  color: #000000
+  font-size: 85px;
+  text-align: center;
+  // color: #000000;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 1.7em;
 }
 
 
@@ -331,34 +334,41 @@ SHOW PAGE
 .post-description {
   text-align: justify;
   height: 45%;
-  padding-bottom: 6em;
   font-family: 'Mukta Vaani', sans-serif;
   font-size: 17px;
+  margin: 3em 10em 3em 10em;
 }
 
 .post-image {
-  margin-left: 10em;
+  margin-left: 5em;
 }
 
 .map-stuff {
-  margin-top: -33em;
-  margin-right: 10em;
+  margin-top: -33.5em;
+  margin-right: 5em;
   text-align: right;
+
+}
+
+img.mape{
+  height: 374px;
+  width: 484px;
 }
 
 .post-location {
   font-family: 'Mukta Vaani', sans-serif;
-  font-size: 15px;
+  font-size: 19px;
 }
 
 #contact-poster{
-  width: 100%;
-  display: inline-flex;
-  margin-left: 35em;
+  // width: 100%;
+  // display: inline-flex;
+  // margin-left: 41em;
 }
 
 #contact-poster p {
   font-size: 15px;
+  text-align: center;
 }
 
 #edit {
@@ -367,8 +377,21 @@ SHOW PAGE
 }
 
 form {
-  margin-left: -17em;
+  // margin-left: -17em;
   margin-top: 2em;
+}
+
+form input {
+
+}
+
+.show-field input{
+  width: 19em;
+}
+
+.show-field textarea {
+  width: 19em;
+  height: 10em;
 }
 
 
@@ -409,6 +432,19 @@ div.field{
   margin-top: 3em;
 }
 
+div.show-field{
+  // margin-left: 18em;
+  // margin-top: 3em;
+}
+
+.show-field {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Mukta Vaani', sans-serif;
+  font-size: 15px;
+  margin-left: -1em;
+}
+
 div.actions {
   margin-left: 50em;
   margin-top: 3em;
@@ -440,4 +476,10 @@ input[type=button], input[type=reset], input[type=submit]{
   font-size: 14px;
   border-radius: 24px;
   padding: 0.5em;
+  // margin-left: 7em;
+}
+
+.show-submit {
+  width: 100%;
+  text-align: center;
 }
