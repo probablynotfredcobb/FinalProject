@@ -1,19 +1,13 @@
 
 
 <p id="notice"><%= notice %></p>
-<div class="bck-btn"><button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button></div><br><br><br>
-<p>
+<div class="bck-btn"><button type="button" class="btn btn-outline-primary"><%= link_to 'Back', posts_path %></button></div><br><br><br><br>
 
-
-  </p>
   <!-- <strong>Title:</strong> -->
   <div class="post-title"><strong><%= @post.title %></strong></div>
 </p><br>
 
-<p>
-  <!-- <strong>Description:</strong> -->
-  <div class="post-description"><%= @post.description %></div>
-</p>
+
 
 <p>
   <div class="post-image">
@@ -21,27 +15,29 @@
   <%= image_tag @post.image_url.to_s %>
 </div>
 
-<p>
-
-  <div class="post-location"><strong>Item Location:</strong><br><br>
-  <%= @post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</div>
-
 </p>
+
+<div class="map-stuff">
 <!-- start map -->
 <% the_source ="https://maps.googleapis.com/maps/api/staticmap?
-center=#{@post.location}&zoom=14&size=400x400
+center=#{@post.location}&zoom=14&size=550x425
 &markers=icon:https://goo.gl/1oTJ9Y%7C#{@post.location}
 &key=AIzaSyDjlbo60sptFY4BnIpEVTlWFU3TCq-nNII" %>
 <%= image_tag the_source %>
 
 <!-- end map -->
 <p>
+  <div class="post-location"><strong>Item Location:</strong>
+  <%= @post.distance_from(session[:lat], session[:lng]).round(1) %> miles away</div>
 
-<!-- <p>
-  <strong>Tag:</strong>
-  <%= @post.tag %>
-</p> -->
+</p>
 </div>
+
+
+<p>
+  <!-- <strong>Description:</strong> -->
+  <div class="post-description"><%= @post.description %></div>
+</p>
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <!-- <div id="edit"><%= link_to 'Edit Post', edit_post_path(@post) %> </div> -->
