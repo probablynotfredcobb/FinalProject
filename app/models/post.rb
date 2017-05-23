@@ -26,6 +26,7 @@ class Post < ApplicationRecord
 
   EARTH_RADIUS = 3958.756; # in miles
   def distance_from(lat, lng)
+    return 0 if lat.nil? || lng.nil?
     lat_radians = radians(lat)
     lng_radians = radians(lng)
 
